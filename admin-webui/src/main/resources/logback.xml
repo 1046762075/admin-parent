@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<!-- 指定日志输出的位置 -->
+	<appender name="FIRE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- 日志输出的格式 -->
+			<!-- 按照顺序分别是：时间、日志级别、线程名称、打印日志的类、日志主体内容、换行 -->
+			<pattern>[%d{HH:mm:ss}]   [%-5level   ]  [%thread   ] [%logger] %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 设置全局日志级别。日志级别按顺序分别是：DEBUG、INFO、WARN、ERROR -->
+	<root level="INFO">
+<!--	<root level="DEBUG">-->
+		<!-- 指定打印日志的appender，这里通过"FIRE"引用了前面配置的appender -->
+		<appender-ref ref="FIRE"/>
+	</root>
+
+	<!-- 根据特殊需求指定局部日志级别 -->
+	<!-- <logger name="com.firenay.leave.mapper" level="DEBUG"/> -->
+</configuration>

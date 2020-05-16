@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.firenay.leave.entity"/>
+    </typeAliases>
+    <!--  配置分页插件  -->
+<!--    <plugins>-->
+<!--        <plugin interceptor="com.github.pagehelper.PageInterceptor">-->
+<!--            &lt;!&ndash; 4.0.0以上的版本支持自动识别数据库方言 &ndash;&gt;-->
+<!--            &lt;!&ndash;分页参数合理化  &ndash;&gt;-->
+<!--            <property name="reasonable" value="true"/>-->
+<!--        </plugin>-->
+<!--    </plugins>-->
+</configuration>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- 配置自动扫描的包：主要是为了把Service扫描到IOC容器中 -->
+	<context:component-scan base-package="com.firenay.leave.service"/>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!--  数据源在 spring-persist-mybatis.xml 文件中 现在报错但是实际运行在IOC容器中能找到-->
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 配置事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+	
+		<tx:attributes>
+			<!-- 查询方法：配置只读属性，让数据库知道这是一个查询操作，能够进行一定优化 -->
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="query*" read-only="true"/>
+			<tx:method name="count*" read-only="true"/>
+			
+			<!-- 增删改方法：配置事务传播行为、回滚异常 -->
+			<!-- 
+				propagation属性：
+					REQUIRED：默认值，表示当前方法必须工作在事务中，如果当前线程上没有已经开启的事务，则自己开新事务。如果已经有了，那么就使用这个已有的事务。
+						顾虑：用别人的事务有可能被因为别人回滚从而导致自己回滚。
+					REQUIRES_NEW：建议使用的值，表示不管当前线程上有没有事务，都要自己开事务，在自己的事务中运行。
+						好处：不会受到其他事务回滚的影响。
+			 -->
+			<!-- 
+				rollback-for属性：配置事务方法针对什么样的异常回滚
+					默认：运行时异常回滚
+					建议：编译时异常和运行时异常都回滚
+			 -->
+			<tx:method name="save*" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+			<tx:method name="update*" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+			<tx:method name="remove*" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+			<tx:method name="batch*" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+		</tx:attributes>
+	</tx:advice>
+
+    <!-- 配置事务切面 -->
+    <aop:config>
+        <!-- 考虑到后面我们整合 SpringSecurity，避免把 UserDetailsService 加入事务控制，让切入点表达式定位到ServiceImpl -->
+        <aop:pointcut expression="execution(* *..*ServiceImpl.*(..))" id="txPointcut"/>
+
+        <!-- 将切入点表达式和事务通知关联起来 -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+    </aop:config>
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+</beans>
