@@ -21,6 +21,15 @@ public class ResultEntity<T> {
 		return result;
 	}
 
+	@Override
+	public String toString() {
+		return "ResultEntity{" +
+				"result='" + result + '\'' +
+				", message='" + message + '\'' +
+				", data=" + data +
+				'}';
+	}
+
 	public void setResult(String result) {
 		this.result = result;
 	}
@@ -78,9 +87,11 @@ public class ResultEntity<T> {
 		if(null != message && message.length > 0){
 			Msg = "";
 			for (String temp : message) {
-				Msg += temp;
-				if(!message[message.length-1].equals(temp)){
-					Msg += "\t";
+				if(temp != null){
+					Msg += temp;
+					if(!message[message.length-1].equals(temp)){
+						Msg += "\t";
+					}
 				}
 			}
 		}

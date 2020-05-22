@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: FIRENAY-ZUUL
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5000/eureka/
+zuul:
+  routes:
+    employee:
+      service-id: firenay-feign-consumer
+      path: /zuul-emp/**
+      # 让所有的服务只能通过别名访问
+  ignored-services: '*'
+  # 访问的时候必须加上这个前缀
+  prefix: /maomi

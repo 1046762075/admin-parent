@@ -26,7 +26,7 @@
 			<props>
 				<!-- key属性指定异常全类名 -->
                 <prop key="java.lang.Exception">system-error</prop>
-<!--                <prop key="com.firenay.leave.exception.AccessForbiddenException">admin-login</prop>-->
+<!--                <prop key="AccessForbiddenException">admin-login</prop>-->
 			</props>
 		</property>
 	</bean>
@@ -47,7 +47,7 @@
             <mvc:exclude-mapping path="/send/compose/object.json"/>
             <mvc:exclude-mapping path="/send/array/*.html"/>
             <mvc:exclude-mapping path="/testSSM.html"/>
-            <bean class="com.firenay.leave.mvc.interceptor.LoginInterceptor"></bean>
+            <bean class="LoginInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors> -->
 </beans>

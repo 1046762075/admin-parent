@@ -1,7 +1,7 @@
 package com.firenay.leave.mapper;
 
-import com.firenay.leave.Menu;
 import com.firenay.leave.MenuExample;
+import com.firenay.leave.Menu;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

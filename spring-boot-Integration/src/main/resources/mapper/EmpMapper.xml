@@ -1,0 +1,8 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firenay.boot.mapper.EmpMapper">
+    <select id="selectAll" resultType="com.firenay.boot.entity.Emp">
+		SELECT emp_id empId, emp_name empName, emp_age empAge
+		FROM
+		table_emp
+	</select>
+</mapper>

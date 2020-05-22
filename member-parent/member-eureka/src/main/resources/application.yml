@@ -1,0 +1,1 @@
+server:  port: 1000eureka:  instance:    hostname: localhost  client:    register-with-eureka: false    fetch-registry: false    service-url:                # 客户端访问当前注册中心时使用的地址      defaultZone: http://${eureka.instance.hostname}/${server.port}/eurekaspring:  application:    name: firenay-leave-eureka

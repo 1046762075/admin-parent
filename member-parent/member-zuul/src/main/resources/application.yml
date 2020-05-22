@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: firenay-leave-zuul
+    #设置 session 共享
+  redis:
+#    host: 120.79.50.189
+    host: 10.43.1.52
+  session:
+    store-type: redis
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+server:
+  port: 520
+zuul:
+  # 路由规则
+  routes:
+    leave-portal:
+      service-id: firenay-leave-auth
+      # 这里一定要使用两个 '*' 号，不然 '/' 路径后面的多层路径将无法访问
+      path: /**
+    leave-project:
+      service-id: firenay-leave-project
+      # 上面使用了 '/**'  这里就不能用了  所以前面带上 '/project' 来区分
+      # 如果不经过 zuul 就不需要带上 /project
+      path: /project/**
+    leave-order:
+      service-id: firenay-leave-order
+      path: /order/**
+    leave-pay:
+      service-id: firenay-leave-pay
+      path: /pay/**
+      # 只允许有别名访问
+  ignored-services: '*'
+  # 在Zuul向其他微服务重定向的时候保持原本请求头信息
+  sensitive-headers: '*'
+  # 防止报 Hystrix Readed time out
+ribbon:
+  ReadTimeout: 60000
+  SocketTimeout: 60000

@@ -3,7 +3,7 @@ package com.firenay.leave.mvc.config;
 import com.firenay.leave.constant.LeaveConstant;
 import com.firenay.leave.exception.LoginAcctAlreadyInUserException;
 import com.firenay.leave.exception.LoginFailedException;
-import com.firenay.leave.util.CrowdUtil;
+import com.firenay.leave.util.LEAVEUtil;
 import com.firenay.leave.util.ResultEntity;
 import com.google.gson.Gson;
 
@@ -61,7 +61,7 @@ public class LeaveExceptionResolver {
 	private ModelAndView commonResolve(String viewName, Exception exception, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		// 1.如果是Ajax请求
-		if (CrowdUtil.judgeRequestType(request)) {
+		if (LEAVEUtil.judgeRequestType(request)) {
 			// 2.创建ResultEntity对象
 			ResultEntity<Object> resultEntity = ResultEntity.failed(exception.getMessage());
 

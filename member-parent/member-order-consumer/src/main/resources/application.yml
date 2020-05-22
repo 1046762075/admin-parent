@@ -1,0 +1,1 @@
+server:  port: 6000eureka:  client:    serviceUrl:      defaultZone: http://localhost:1000/eureka/spring:  application:    name: firenay-leave-order    # Spring Session 利用redis进行序列化存储  thymeleaf:    prefix: classpath:/templates/    suffix: .html  redis:#    host: 120.79.50.189    host: 10.43.1.52  session:      store-type: redis

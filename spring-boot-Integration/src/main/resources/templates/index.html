@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Boot-Thymeleaf</title>
+</head>
+<body>
+  <center>
+    <h2>1.基本标签的使用</h2>
+    <p th:text="Boot-Thymeleaf"></p>
+    <p th:text="${modelMapVal}">访问ModelMap</p>
+    <p th:text="${session.sessionVal}">访问Session</p>
+    <p th:text="${application.AppContextVal}">访问AppContext</p>
+    <a th:href="@{http:///fireflynay.top}">解析URL</a>
+    <p>[[${modelMapVal}]]</p>
+    <h2>2.遍历集合</h2>
+    <div th:each="val : ${list}">
+      <p th:text="${val}"></p>
+    </div>
+
+    <h2>3.包含页面片段</h2>
+    <!-- 左边的值拼前后缀必须能够找到要包含的文件 -->
+    <!-- 右边的值是代码片段的名字 -->
+    <div th:insert="~{include/part :: myFirstPart}"></div>
+    <!-- replace:是拿目标来替换   -->
+    <div style="background-color: chartreuse" th:replace="~{include/part :: mySecondPart}"></div>
+    <!-- include:是把目标包含进来   -->
+    <div style="background-color: blueviolet" th:include="~{include/part :: myThirdPart}"></div>
+  </center>
+</body>
+</html>

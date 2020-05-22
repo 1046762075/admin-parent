@@ -1,0 +1,13 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: FIRENAY-FEIGN-CONSUMER
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5000/eureka/
+      # 开启服务降级
+feign:
+  hystrix:
+    enabled: true

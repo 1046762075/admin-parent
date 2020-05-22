@@ -1,0 +1,23 @@
+
+spring:
+  datasource:
+    name: firenay
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/project_leave??useSSL=false&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true
+    username: root
+    password: mq0000
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 120.79.50.189
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false  #开发的时候禁用缓存
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+logging:
+  level:
+    com.firenay.boot.mapper: debug
+#server:
+#  servlet:
+#    context-path: /fireflynay.top

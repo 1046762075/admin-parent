@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: firenay-leave-redis
+  redis:
+#    host: 120.79.50.189
+    host: 10.43.1.52
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/
+server:
+  port: 3000

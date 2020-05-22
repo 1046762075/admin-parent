@@ -1,0 +1,9 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: FIRENAY-CONSUMER
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5000/eureka/

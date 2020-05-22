@@ -1,10 +1,10 @@
 package com.firenay.leave.mvc.handler;
 
 import com.firenay.leave.Admin;
-import com.firenay.leave.service.api.AdminService;
 import com.firenay.leave.test.ParamData;
 import com.firenay.leave.test.Student;
-import com.firenay.leave.util.CrowdUtil;
+import com.firenay.leave.service.api.AdminService;
+import com.firenay.leave.util.LEAVEUtil;
 import com.firenay.leave.util.ResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ public class TestHandler {
 	@RequestMapping("/send/compose/object.json")
 	public ResultEntity<Student> testReceiveComposeObject(@RequestBody Student student, HttpServletRequest request) {
 //		System.out.println(10 / 0);
-		boolean flag = CrowdUtil.judgeRequestType(request);
+		boolean flag = LEAVEUtil.judgeRequestType(request);
 
 		logger.info("\n是否为JSON数据：" + flag + "\n" + student.toString());
 
@@ -76,7 +76,7 @@ public class TestHandler {
 //		if(session.getAttribute(LeaveConstant.ATTR_NAME_LOGIN_ADMIN) == null){
 //			throw new NotloggedException(LeaveConstant.MESSAGE_NOT_LOGGED);
 //		}
-		boolean flag = CrowdUtil.judgeRequestType(request);
+		boolean flag = LEAVEUtil.judgeRequestType(request);
 
 		logger.info("\n是否为JSON请求 ：" + flag);
 

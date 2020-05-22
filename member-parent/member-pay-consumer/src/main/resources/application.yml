@@ -1,0 +1,27 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: firenay-leave-pay
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+#    host: 120.79.50.189
+    host: 10.43.1.52
+  session:
+    store-type: redis
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+ali:
+  pay:
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMAkw7OmxubpJqkqhsdu3yPRVRnDJTjs1Cfl2lox10kv8sKkQwYwtojJQ45RgoSnn1vo/rda/F73pLoANYgE+RpNx8kghatwYDsqQm3S4B84aMR+7GMN9qMm6dXXxoKGn5aY+9NPjkCDO9YeZ4HPn1Yqndj7Y//YfHVSmQQPQKvuWRGGr1bVYUW/IpKBOGr77oSgea0sm42GxPoLypuTiVfq/7AcjmZ3wbTYF2NMwebFXUJmwR5EjdBQa/CnVDKDwpB4doqlP/HpXaepadHYWJZEPokt+nZyiW5l9HrsHU/67A/BSpC/MX/nrtonjnK+j0w/ywvUIIPbzDUpwuTClnNGQIDAQAB
+    app-id: 2016102100732649
+    charset: utf-8
+    gateway-url: https://openapi.alipaydev.com/gateway.do
+    merchant-private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwG/E23qRr5okKNG2z9+cSsYOq+AnAASPOM110Ts+ez5He0DslysvrDlBRmjjh1xipZajhzrKj+kzBrz2SsRQX1DJCbUnqVeuvFr3uAYcW78G2l59Mc/Ccrsz8Y+3f2UxAhsO+jMPtDiI4CcFU/OqqiiaaiNyKjrTLKtsLCRPtm+JFwo1z2ijjjC67lfP4L7uDm6sV68cgP6HJRi3O3FB2HiBISklmOkxJb8U4jAZQCYPVVx1AxjeX0PQdOzYyv7JqOz2jC1XwDy3b7O7ObNm4orU+Ji4CHA4RhO3emkDIQswaRiN01E9+vwMFs7E6t4xf0H/6COi88sEYI2ekCQrAgMBAAECggEBAIACvnfpLEj8M70EqwhgoWcATkgpQRlP7jPr+pmFwEKfCJha8OZ0dBrAjzM/cMVYKWTze3p+WlinMYThAPRvF4FOuh0CmuIEr1BKbWbkO/HI2TATURz7NcwWXzPgWoeAcyahFPMq+Ap3Sc5b4Dk/S26a18qTYNg2rjr3CQDP1v6LykOjS1HQL4JmsaoC8W6E8iRIO/373+qyeaaDLSVeTce/4aVyrQRvyumvZHwavgzcba6kP4ALsGvJy8Ard7gv94x7j+8/Ny4TTbPutRD1a43kI6aP8nbyQYddL4Uni0UhISK7uYp5EYLBpla/aAopD8KFZqhRrDiKzUQImDsSW4ECgYEA6sdCAeUF/HDKSxRFxCUYz50sw2y8Yj2Cs5cjdk6PbQQInG0uf8PK5Fhm8cIiu3fB4S1EWshbwFz+MbCNxGpJa9TLLDDR7JWbC23ZutVAm8DzzJC9+lBFGrJ+0Hz2KbUP8cmASMsafIjH8hS3HeW1/fSQwb2nBDmOd2or5WEbvrsCgYEAtQ7HwzKM0Nq2LPLm8Wrn34qh0xqEgobRMhBuK0sf5AadaBRplFQZig7eTqIPE3hRM4npsmLX3S4B4FEynWCf2uypj9UIrR9nd/wUmWD8FuGpqdfmlYiiJ1MTSsGa1+/SCQbGnmXc6ERVWK8Cd1MCj+ENgSRRRfMO6qmj4mjlMVECgYEAqOUTPR2uwr25KW26CrLNOH3Pd/6/PsUVQ3DU2AUH9NrT/wQkUVFeogpedEi+h7JNTVotNEmyh53eV4y1T7lOfD4msvGj8thlI0GxQlCrG+EhAeaWZH5eWChURlO/Gp3gjIXyvWsu8KvNev8gBGf+FmVbxaRThByLuqgsT+Ud+oUCgYBETT4YqfIrO8arsDpk6lJspuyjKYbBgsBaJY6Z8G4oZEJvJ/woQ42a4j8E5OfRDXt8eNNbQyRxwNBeYeM5MWE8gjj5FIGAZa9vuP3AWrDepOSPOO44jOG2+gT2F5ElUsgmNZMp3/109YpIuUSx5PO7eUfR5vRt8eI3riUv3ShQ8QKBgQCjL5YO7274zoonWVafMkjCOVKFEb0Cx4Z6Kh0TVJWFhy7MVSQmN2C4Z08gNFyCj2wzxYBVACgSX7oelbvl2tJ1fSaS12WcWVqCGrFcQV9WDYKJOuRjdiFn2noTvp96FBVeZeUiSWosZKFQE5ZPUezXpFd+fhKCpR9hRjOLkCurLA==
+    notify-url: http://krsgnh.natappfree.cc/pay/notify
+    return-url: http://www.fireflynay.top:520/pay/return
+    sign-type: RSA2

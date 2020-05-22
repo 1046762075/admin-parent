@@ -1,9 +1,9 @@
 package com.firenay.leave.service.impl;
 
+import com.firenay.leave.service.api.MenuService;
 import com.firenay.leave.Menu;
 import com.firenay.leave.MenuExample;
 import com.firenay.leave.mapper.MenuMapper;
-import com.firenay.leave.service.api.MenuService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

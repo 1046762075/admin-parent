@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: firenay-leave-redis
+  redis:
+    host: 120.79.50.189
+  session:
+    store-type: redis
+server:
+  port: 5555

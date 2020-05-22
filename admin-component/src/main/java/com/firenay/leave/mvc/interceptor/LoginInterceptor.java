@@ -1,8 +1,8 @@
 package com.firenay.leave.mvc.interceptor;
 
+import com.firenay.leave.exception.AccessForbiddenException;
 import com.firenay.leave.constant.LeaveConstant;
 import com.firenay.leave.Admin;
-import com.firenay.leave.exception.AccessForbiddenException;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;

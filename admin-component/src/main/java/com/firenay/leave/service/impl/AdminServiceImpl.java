@@ -1,14 +1,14 @@
 package com.firenay.leave.service.impl;
 
-import com.firenay.leave.Admin;
 import com.firenay.leave.AdminExample;
 import com.firenay.leave.constant.LeaveConstant;
 import com.firenay.leave.exception.LoginAcctAlreadyInUserException;
 import com.firenay.leave.exception.LoginAcctAlreadyInUserUpdateException;
 import com.firenay.leave.exception.LoginFailedException;
 import com.firenay.leave.mapper.AdminMapper;
+import com.firenay.leave.Admin;
 import com.firenay.leave.service.api.AdminService;
-import com.firenay.leave.util.CrowdUtil;
+import com.firenay.leave.util.LEAVEUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DuplicateKeyException;
@@ -103,7 +103,7 @@ public class AdminServiceImpl implements AdminService {
 			throw new RuntimeException(LeaveConstant.MESSAGE_SYSTEM_ERROR_LOGIN_NOT_UNIQUE);
 		}
 		Admin administrator = admins.get(0);
-		if(!Objects.equals(administrator.getUserPswd(),CrowdUtil.md5(admin.getUserPswd()))){
+		if(!Objects.equals(administrator.getUserPswd(), LEAVEUtil.md5(admin.getUserPswd()))){
 			throw new LoginFailedException(LeaveConstant.MESSAGE_LOGIN_FAILED);
 		}
 		admin.setId(administrator.getId());

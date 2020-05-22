@@ -1,6 +1,6 @@
 package com.firenay.leave.test;
 
-import com.firenay.leave.util.CrowdUtil;
+import com.firenay.leave.util.LEAVEUtil;
 import org.junit.Test;
 
 /**
@@ -13,7 +13,7 @@ public class StringTest {
 	@Test
 	public void testMd5(){
 		String source = "123";
-		String md5 = CrowdUtil.md5(source);
+		String md5 = LEAVEUtil.md5(source);
 		System.out.println(md5);
 	}
 }

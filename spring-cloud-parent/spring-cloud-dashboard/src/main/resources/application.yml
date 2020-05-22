@@ -1,0 +1,9 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: FIRENAY-DASHBOARD
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5000/eureka/

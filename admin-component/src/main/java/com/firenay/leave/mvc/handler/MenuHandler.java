@@ -1,8 +1,8 @@
 package com.firenay.leave.mvc.handler;
 
-import com.firenay.leave.Menu;
 import com.firenay.leave.constant.LeaveConstant;
 import com.firenay.leave.service.api.MenuService;
+import com.firenay.leave.Menu;
 import com.firenay.leave.util.ResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

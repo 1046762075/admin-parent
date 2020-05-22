@@ -1,7 +1,7 @@
 package com.firenay.leave.mapper;
 
-import com.firenay.leave.Admin;
 import com.firenay.leave.AdminExample;
+import com.firenay.leave.Admin;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

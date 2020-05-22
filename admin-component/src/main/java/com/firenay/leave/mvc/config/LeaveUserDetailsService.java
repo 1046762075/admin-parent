@@ -1,9 +1,9 @@
 package com.firenay.leave.mvc.config;
 
-import com.firenay.leave.Admin;
 import com.firenay.leave.Role;
-import com.firenay.leave.service.api.AdminService;
 import com.firenay.leave.service.api.AuthService;
+import com.firenay.leave.Admin;
+import com.firenay.leave.service.api.AdminService;
 import com.firenay.leave.service.api.RoleService;
 
 import org.springframework.security.core.GrantedAuthority;
