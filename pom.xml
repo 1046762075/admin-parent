@@ -20,7 +20,7 @@
 <!--        <firenay.spring.version>5.2.2.RELEASE</firenay.spring.version>-->
         <org.aspectj.version>1.9.5</org.aspectj.version>
 <!--        <mybatis.version>3.5.4</mybatis.version>-->
-        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
 <!--        <cglib.version>3.3.0</cglib.version>-->
         <cglib.version>2.2</cglib.version>
 <!--        <mybatis-spring.version>2.0.4</mybatis-spring.version>-->
