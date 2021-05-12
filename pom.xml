@@ -16,7 +16,7 @@
 
     <properties>
         <firenay.spring.version>4.3.20.RELEASE</firenay.spring.version>
-        <firenay.security.version>4.2.10.RELEASE</firenay.security.version>
+        <firenay.security.version>5.2.10.RELEASE</firenay.security.version>
 <!--        <firenay.spring.version>5.2.2.RELEASE</firenay.spring.version>-->
         <org.aspectj.version>1.9.5</org.aspectj.version>
 <!--        <mybatis.version>3.5.4</mybatis.version>-->
