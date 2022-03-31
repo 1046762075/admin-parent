@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <firenay.spring.version>4.3.20.RELEASE</firenay.spring.version>
+        <firenay.spring.version>5.3.18</firenay.spring.version>
         <firenay.security.version>4.2.10.RELEASE</firenay.security.version>
 <!--        <firenay.spring.version>5.2.2.RELEASE</firenay.spring.version>-->
         <org.aspectj.version>1.9.5</org.aspectj.version>
